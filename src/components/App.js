@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Content, Header, Body, Title, Left, Right } from 'native-base'
-import { Row, Grid } from 'react-native-easy-grid'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import AddTodo from '../containers/AddTodo'
 import Footer from '../components/Footer'
