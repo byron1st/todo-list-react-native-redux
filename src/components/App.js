@@ -1,25 +1,25 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import { Container, Content, Header, Body, Title, Left, Right } from 'native-base'
+import { Row, Grid } from 'react-native-easy-grid'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import AddTodo from '../containers/AddTodo'
 import Footer from '../components/Footer'
 
 const App = () => (
-  <View style={styles.containers}>
-    <AddTodo />
-    <Text>*******Todo List*******</Text>
-    <VisibleTodoList />
+  <Container>
+    <Header>
+      <Left />
+      <Body>
+        <Title>Todo List</Title>
+      </Body>
+      <Right />
+    </Header>
+    <Content>
+      <AddTodo />
+      <VisibleTodoList />
+    </Content>
     <Footer />
-  </View>
+  </Container>
 )
-
-const styles = StyleSheet.create({
-  containers: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    backgroundColor: '#F5FCFF'
-  }
-})
 
 export default App

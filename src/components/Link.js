@@ -1,20 +1,22 @@
 import React, { PropTypes } from 'react'
-import { Button } from 'react-native'
+import { Button, Text } from 'native-base'
 
 const Link = ({ active, children, onPress }) => {
   if (active) {
     return <Button
-      disabled
       onPress={() => onPress()}
-      title={children}
-    />
+      active
+    >
+      <Text>{children}</Text>
+    </Button>
   }
 
   return (
     <Button
       onPress={() => onPress()}
-      title={children}
-    />
+    >
+      <Text>{children}</Text>
+    </Button>
   )
 }
 

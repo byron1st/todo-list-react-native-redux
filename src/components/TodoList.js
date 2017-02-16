@@ -1,17 +1,17 @@
 import React, { PropTypes } from 'react'
-import { View } from 'react-native'
+import { Card } from 'native-base'
 import Todo from './Todo'
 
 const TodoList = ({ todos, onTodoPress }) => {
   return (
-    <View>
+    <Card>
       {todos.map(todo =>
         <Todo key={todo.id}
           {...todo}
           onPress={() => onTodoPress(todo.id)}
         />
       )}
-    </View>
+    </Card>
   )
 }
 

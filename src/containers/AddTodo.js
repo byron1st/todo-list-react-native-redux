@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TextInput, Button } from 'react-native'
+import { Text, Form, Item, Input, Button } from 'native-base'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
@@ -13,20 +13,24 @@ class AddTodoClass extends Component {
 
   render () {
     return (
-      <View>
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
-        />
+      <Form>
+        <Item>
+          <Input
+            placeholder='Add a todo'
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
+          />
+        </Item>
         <Button
+          block
           onPress={() => {
             this.props.dispatch(addTodo(this.state.text))
             this.setState({text: ''})
           }}
-          title='Add a todo'
-        />
-      </View>
+        >
+          <Text>Add a todo</Text>
+        </Button>
+      </Form>
     )
   }
 }

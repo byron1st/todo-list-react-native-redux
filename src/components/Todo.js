@@ -1,15 +1,17 @@
 import React, { PropTypes } from 'react'
-import { Text } from 'react-native'
+import { CardItem, Text } from 'native-base'
 
 const Todo = ({ onPress, completed, text }) => (
-  <Text
-    onPress={onPress}
-    style={{
-      textDecorationLine: completed ? 'line-through' : 'none'
-    }}
-  >
-    {text}
-  </Text>
+  <CardItem>
+    <Text
+      onPress={onPress}
+      style={{
+        textDecorationLine: completed ? 'line-through' : 'none'
+      }}
+    >
+      {text}
+    </Text>
+  </CardItem>
 )
 
 Todo.propTypes = {
