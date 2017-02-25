@@ -1,4 +1,6 @@
-let nextTodoId = 0
+import { todos } from '../realm'
+
+let nextTodoId = todos.length
 
 export const ADD_TODO = 'ADD_TODO'
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'

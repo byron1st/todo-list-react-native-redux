@@ -1,18 +1,23 @@
 import {ADD_TODO, TOGGLE_TODO} from '../actions'
+import realm from '../realm'
 
 const todo = (state = {}, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return {
+      let newTodo = {
         id: action.id,
         text: action.text,
         completed: false
       }
+
+      realm.write(() => realm.create('Todo', newTodo))
+      return newTodo
     case TOGGLE_TODO:
       if (state.id !== action.id) {
         return state
       }
 
+      realm.write(() => realm.create('Todo', {id: action.id, completed: !state.completed}, true))
       return {
         ...state,
         completed: !state.completed
